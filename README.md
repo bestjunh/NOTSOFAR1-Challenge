@@ -92,7 +92,7 @@ conda activate notsofar
 cd /path/to/NOTSOFAR1-Challenge
 python -m pip install --upgrade pip
 pip install --upgrade setuptools wheel Cython fasttext-wheel
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
 conda install ffmpeg -c conda-forge -y
 ```
 
@@ -123,6 +123,9 @@ source /path/to/virtualenvs/NOTSOFAR/bin/activate
 #### Step 3: Install Python Dependencies
 
 Navigate to the cloned repository and install the required Python dependencies:
+```bash
+sudo apt-get install sox
+```
 
 ```bash
 cd /path/to/NOTSOFAR1-Challenge
@@ -131,10 +134,36 @@ pip install --upgrade setuptools wheel Cython fasttext-wheel
 sudo apt-get install python3.10-dev ffmpeg build-essential
 pip install -r requirements.txt
 ```
+```bash
+pip install megatron-core==0.4.0
+pip install nemo_toolkit
+pip install git+https://github.com/openai/whisper.git 
+conda install -c conda-forge hydra-core
+pip install pytorch-lightning
+pip install transformers
+pip install sentencepiece
+pip install Cython
+pip install youtokentome
+pip install inflect
+pip install editdistance
+pip install lhotse
+pip install pyannote.audio
+pip install webdataset
+pip install datasets
+```
 
 ### Docker
 
 Refer to the `Dockerfile` in the project's root for dependencies setup. To use Docker, ensure you have Docker installed on your system and configured to use Linux containers.
+
+Docker 설치
+```
+sudo apt-get update
+sudo apt-get install -y docker.io
+```
+컨테이너 실행
+
+
 
 ### Devcontainer
 With the provided `devcontainer.json` you can run and work on the project in a [devctonainer](https://containers.dev/) using, for example, the [Dev Containers VSCode Extension](https://code.visualstudio.com/docs/devcontainers/containers).
