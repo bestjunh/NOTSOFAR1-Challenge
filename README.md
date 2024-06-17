@@ -157,12 +157,35 @@ pip install datasets
 Refer to the `Dockerfile` in the project's root for dependencies setup. To use Docker, ensure you have Docker installed on your system and configured to use Linux containers.
 
 Docker 설치
-```
+```bash
 sudo apt-get update
 sudo apt-get install -y docker.io
 ```
-컨테이너 실행
 
+NVIDA Container Toolkit 설치
+```bash
+sudo apt-get install -y nvidia-docker2
+sudo systemctl restart docker
+```
+
+Docker image build
+```bash
+docker build -t myimage:latest .
+```
+여기서 myimage는 빌드된 이미지의 이름이고, latest는 태그입니다.
+
+Docker image 실행
+```bash
+docker run --gpus all -it --name mycontainer myimage:latest
+```
+
+```bash
+pip install nemo_toolkit
+pip install git+https://github.com/openai/whisper.git
+pip install hydra-core --upgrade
+pip install pytorch-lightning
+pip install transformers
+```
 
 
 ### Devcontainer
